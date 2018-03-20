@@ -8,3 +8,10 @@ services:
       - "127.0.0.1:8080:8080"
     volumes:
       - ./mapproxy/osm:/docker-entrypoint-initmapproxy.d
+
+  geoserver:
+    image: yagajs/geoserver
+    expose:
+      - 8080
+    ports:
+      - "127.0.0.1:8081:8080"
