@@ -1,0 +1,39 @@
+services:
+  demo:
+  tms:
+    use_grid_names: true
+    # origin for /tiles service
+    origin: 'nw'
+  kml:
+      use_grid_names: true
+  wmts:
+  wms:
+    md:
+      title: MapProxy WMS Proxy for OSM
+      abstract: This is a minimal MapProxy example.
+
+layers:
+  - name: osm
+    title: OpenStreetMap
+    sources: [osm_cache]
+
+caches:
+  osm_cache:
+    grids: [webmercator]
+    sources: [osm_source]
+
+sources:
+  osm_source:
+    type: tile
+    grid: osm_grid
+    url: http://tile.openstreetmap.org/%(z)s/%(x)s/%(y)s.png
+
+grids:
+    webmercator:
+      base: GLOBAL_WEBMERCATOR
+    osm_grid:
+      base: GLOBAL_MERCATOR
+      srs: 'EPSG:3857'
+      origin: nw
+
+globals:
