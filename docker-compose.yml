@@ -15,3 +15,19 @@ services:
       - 8080
     ports:
       - "127.0.0.1:8081:8080"
+
+postgis:
+    image: yagajs/postgis
+    expose:
+      - 5432
+    environment:
+      POSTGRES_PASSWORD: "my-secret-one"
+      POSTGRES_USER: "yaga"
+      POSTGRES_DB: "yaga"
+    volumes:
+      - postgis-data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
+
+volumes:
+  postgis-data:
