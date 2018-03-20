@@ -26,6 +26,7 @@ services:
       POSTGRES_DB: "yaga"
     volumes:
       - postgis-data:/var/lib/postgresql/data
+      - ./postgis:/docker-entrypoint-initdb.d
     ports:
       - "127.0.0.1:5432:5432"
 
