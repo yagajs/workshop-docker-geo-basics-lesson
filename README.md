@@ -8,4 +8,6 @@ of this workshop in combination with this repository. Every step on the booklet 
 repository. You can use the following Git commands to get help when one step is failing:
 
 * Compare your code with a step from the tutorial: `git diff [name-of-the-step]`
-* Load a step from the tutorial: `git checkout [name-of-the-step]`
+* Load a step from the tutorial: `git checkout [name-of-the-step]` (maybe revert or stash your local changes before!)
+
+*This Workshop is created by [the YAGA Development Team](https://yagajs.org) 2018.*
